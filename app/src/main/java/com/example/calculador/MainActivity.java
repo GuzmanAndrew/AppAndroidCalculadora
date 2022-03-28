@@ -257,18 +257,18 @@ public class MainActivity extends AppCompatActivity {
     public void sumOperator() {
         proceso = resultado.getText().toString();
         String[] oper = proceso.split(" ");
-        int num1 = Integer.parseInt(oper[0]);
-        int num2 = Integer.parseInt(oper[2]);
-        int operSum = num1 + num2;
+        double num1 = Double.parseDouble(oper[0]);
+        double num2 = Double.parseDouble(oper[2]);
+        double operSum = num1 + num2;
         String resultSum = String.valueOf(operSum);
         total.setText(resultSum);
     }
     public void resOperator() {
         proceso = resultado.getText().toString();
         String[] oper = proceso.split(" ");
-        int num1 = Integer.parseInt(oper[0]);
-        int num2 = Integer.parseInt(oper[2]);
-        int operRes = num1 - num2;
+        double num1 = Double.parseDouble(oper[0]);
+        double num2 = Double.parseDouble(oper[2]);
+        double operRes = num1 - num2;
         String resultRes = String.valueOf(operRes);
         total.setText(resultRes);
     }
@@ -276,9 +276,9 @@ public class MainActivity extends AppCompatActivity {
     public void mulOperator() {
         proceso = resultado.getText().toString();
         String[] oper = proceso.split(" ");
-        int num1 = Integer.parseInt(oper[0]);
-        int num2 = Integer.parseInt(oper[2]);
-        int operMul = num1 * num2;
+        double num1 = Double.parseDouble(oper[0]);
+        double num2 = Double.parseDouble(oper[2]);
+        double operMul = num1 * num2;
         String resultMul = String.valueOf(operMul);
         total.setText(resultMul);
     }
@@ -286,19 +286,23 @@ public class MainActivity extends AppCompatActivity {
     public void divOperator() {
         proceso = resultado.getText().toString();
         String[] oper = proceso.split(" ");
-        int num1 = Integer.parseInt(oper[0]);
-        int num2 = Integer.parseInt(oper[2]);
-        int operDiv = num1 / num2;
-        String resultDiv = String.valueOf(operDiv);
-        total.setText(resultDiv);
+        double num1 = Double.parseDouble(oper[0]);
+        double num2 = Double.parseDouble(oper[2]);
+        if (num1 == 0 || num2 == 0) {
+            total.setText("No se puede dividir entre cero");
+        } else {
+            double operDiv = num1 / num2;
+            String resultDiv = String.valueOf(operDiv);
+            total.setText(resultDiv);
+        }
     }
 
     public void modOperator() {
         proceso = resultado.getText().toString();
         String[] oper = proceso.split(" ");
-        int num1 = Integer.parseInt(oper[0]);
-        int num2 = Integer.parseInt(oper[2]);
-        int operMod = num1 % num2;
+        double num1 = Double.parseDouble(oper[0]);
+        double num2 = Double.parseDouble(oper[2]);
+        double operMod = num1 % num2;
         String resultMod = String.valueOf(operMod);
         total.setText(resultMod);
     }
@@ -306,8 +310,8 @@ public class MainActivity extends AppCompatActivity {
     public void potOperator() {
         proceso = resultado.getText().toString();
         String[] oper = proceso.split(" ");
-        int num1 = Integer.parseInt(oper[0]);
-        int num2 = Integer.parseInt(oper[2]);
+        double num1 = Double.parseDouble(oper[0]);
+        double num2 = Double.parseDouble(oper[2]);
         double operPot = Math.pow(num1, num2);
         String resultPot = String.valueOf(operPot);
         total.setText(resultPot);
@@ -316,7 +320,7 @@ public class MainActivity extends AppCompatActivity {
     public void raizOperator() {
         proceso = resultado.getText().toString();
         String[] oper = proceso.split(" ");
-        int num1 = Integer.parseInt(oper[2]);
+        double num1 = Double.parseDouble(oper[2]);
         double operRaiz = Math.sqrt(num1);
         String resultRaiz = String.valueOf(operRaiz);
         total.setText(resultRaiz);
@@ -325,7 +329,7 @@ public class MainActivity extends AppCompatActivity {
     public void senOperator() {
         proceso = resultado.getText().toString();
         String[] oper = proceso.split(" ");
-        double num1 = Integer.parseInt(oper[2]);
+        double num1 = Double.parseDouble(oper[2]);
         double numRadianes = Math.toRadians(num1);
         double operSen = Math.sin(numRadianes);
         String resultSen = String.valueOf(operSen);
@@ -335,7 +339,7 @@ public class MainActivity extends AppCompatActivity {
     public void cosOperator() {
         proceso = resultado.getText().toString();
         String[] oper = proceso.split(" ");
-        double num1 = Integer.parseInt(oper[2]);
+        double num1 = Double.parseDouble(oper[2]);
         double numRadianes = Math.toRadians(num1);
         double operCos = Math.cos(numRadianes);
         String resultCos = String.valueOf(operCos);
@@ -345,7 +349,7 @@ public class MainActivity extends AppCompatActivity {
     public void tanOperator() {
         proceso = resultado.getText().toString();
         String[] oper = proceso.split(" ");
-        double num1 = Integer.parseInt(oper[2]);
+        double num1 = Double.parseDouble(oper[2]);
         double numRadianes = Math.toRadians(num1);
         double operTan = Math.tan(numRadianes);
         String resultTan = String.valueOf(operTan);
